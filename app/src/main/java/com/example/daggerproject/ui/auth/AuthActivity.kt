@@ -3,20 +3,20 @@ package com.example.daggerproject.ui.auth
 import android.graphics.drawable.Drawable
 import android.os.Bundle
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.ViewModelProviders
 import com.bumptech.glide.RequestManager
 import com.example.daggerproject.R
-import com.example.daggerproject.viewmodel.ViewModelProviderFactory
+import com.example.daggerproject.ui.viewmodel.ViewModelProviderFactory
 import dagger.android.support.DaggerAppCompatActivity
 import javax.inject.Inject
 
 class AuthActivity : DaggerAppCompatActivity() {
-    private lateinit var viewModel: AuthViewModel
     @Inject
     lateinit var providerFactory: ViewModelProviderFactory
+    lateinit var viewModel: AuthViewModel
 
     @Inject
     lateinit var logo: Drawable
+
     @Inject
     lateinit var requestManager: RequestManager
 

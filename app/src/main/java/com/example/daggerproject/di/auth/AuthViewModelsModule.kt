@@ -1,5 +1,6 @@
 package com.example.daggerproject.di.auth
 
+import androidx.lifecycle.ViewModel
 import com.example.daggerproject.di.ViewModelKey
 import com.example.daggerproject.ui.auth.AuthViewModel
 import dagger.Binds
@@ -11,5 +12,5 @@ abstract class AuthViewModelsModule {
     @Binds
     @IntoMap
     @ViewModelKey(AuthViewModel::class)
-    abstract fun bindAuthViewModel(viewModel: AuthViewModel)
+    abstract fun bindAuthViewModel(viewModel: AuthViewModel):ViewModel
 }
