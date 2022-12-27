@@ -7,13 +7,24 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.RequestManager
 import com.bumptech.glide.request.RequestOptions
 import com.example.daggerproject.R
+import com.example.daggerproject.utils.BASE_URL
 import dagger.Module
 import dagger.Provides
+import retrofit2.Retrofit
+import retrofit2.adapter.rxjava3.RxJava3CallAdapterFactory
+import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
 
 @Module
 class AppModule {
     companion object {
+        @Singleton
+        @Provides
+        fun provideRetroFitInstance(): Retrofit {
+            return Retrofit.Builder().baseUrl(BASE_URL)
+                .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
+                .addConverterFactory(GsonConverterFactory.create()).build()
+        }
 
         @Singleton
         @Provides
