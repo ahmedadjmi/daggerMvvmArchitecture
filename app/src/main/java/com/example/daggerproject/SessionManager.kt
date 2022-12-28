@@ -10,8 +10,8 @@ import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
-class SessionManager @Inject constructor(val cashedUser: MediatorLiveData<AuthResource<User>> = MediatorLiveData()) {
-
+class SessionManager @Inject constructor() {
+    val cashedUser: MediatorLiveData<AuthResource<User>> = MediatorLiveData()
     fun authenticatedWithId(source: LiveData<AuthResource<User>>) {
         if (Objects.nonNull(cashedUser)) {
             cashedUser.value = AuthResource.loading()

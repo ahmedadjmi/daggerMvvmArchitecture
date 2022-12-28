@@ -1,5 +1,6 @@
 package com.example.daggerproject.ui.auth
 
+import android.content.Intent
 import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.text.TextUtils
@@ -12,6 +13,7 @@ import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.RequestManager
 import com.example.daggerproject.R
+import com.example.daggerproject.ui.main.MainActivity
 import com.example.daggerproject.ui.viewmodel.ViewModelProviderFactory
 import com.example.daggerproject.utils.AuthStatus
 import dagger.android.support.DaggerAppCompatActivity
@@ -57,6 +59,7 @@ class AuthActivity : DaggerAppCompatActivity() {
                     AuthStatus.AUTHENTICATED -> {
                         progressBar.visibility = View.GONE
                         Log.d("login success", "email: " + it.data?.email)
+                        onLoginSucces()
                     }
                     AuthStatus.ERROR -> {
                         progressBar.visibility = View.GONE
@@ -76,4 +79,9 @@ class AuthActivity : DaggerAppCompatActivity() {
         requestManager.load(logo).into(findViewById(R.id.login_logo))
     }
 
+    private fun onLoginSucces() {
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
+        finish()
+    }
 }
