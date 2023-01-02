@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    app:startDestination="@id/profileScreen">
+    <fragment
+        android:id="@+id/profileScreen"
+        android:name="com.example.daggerproject.ui.main.profile.ProfileFragment"
+        android:label="@string/profile" />
+    <fragment
+        android:id="@+id/postScreen"
+        android:name="com.example.daggerproject.ui.main.post.PostFragment"
+        android:label="@string/post" />
+
+</navigation>

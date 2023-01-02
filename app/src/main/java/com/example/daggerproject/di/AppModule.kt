@@ -7,6 +7,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.RequestManager
 import com.bumptech.glide.request.RequestOptions
 import com.example.daggerproject.R
+import com.example.daggerproject.models.User
 import com.example.daggerproject.utils.BASE_URL
 import dagger.Module
 import dagger.Provides
@@ -46,7 +47,6 @@ class AppModule {
         fun provideAppDrawable(application: Application): Drawable {
             return ContextCompat.getDrawable(application, R.drawable.logo)!!
         }
-
 
     }
 }
